@@ -11,9 +11,11 @@ class vagrant {
     unless  => "which vagrant && /usr/bin/vagrant -v | /bin/grep ${version}"
   } ->
 
-  package{'vagrant':
-    ensure   => latest,
-    source   => "/tmp/${deb}",
-    provider => dpkg
+  exec{'install vagrant deb':
+    command => "dpgk -i /tmp/${deb}",
+    user    => 'root',
+    path    => ['/usr/bin','/bin',],
+    unless  => "which vagrant && /usr/bin/vagrant -v | /bin/grep ${version}"
   }
+  
 }
