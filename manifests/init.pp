@@ -12,7 +12,7 @@ class vagrant {
   } ->
 
   exec{'install vagrant deb':
-    command => "dpgk -i /tmp/${deb}",
+    command => "dpkg -i /tmp/${deb}",
     user    => 'root',
     path    => ['/usr/bin','/bin',],
     unless  => "which vagrant && /usr/bin/vagrant -v | /bin/grep ${version}"
