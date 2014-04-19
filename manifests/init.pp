@@ -1,7 +1,7 @@
 # a module which install vagrant, since it lacks PPA its akward
 class vagrant {
   $url  = 'http://dl.bintray.com/mitchellh/vagrant/'
-  $version = '1.4.2'
+  $version = '1.5.3'
   $deb  = "vagrant_${version}_x86_64.deb"
 
   exec{'download vagrant deb':
