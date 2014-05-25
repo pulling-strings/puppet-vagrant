@@ -1,7 +1,7 @@
 # a module which install vagrant, since it lacks PPA its akward
 class vagrant {
   $url  = 'https://dl.bintray.com/mitchellh/vagrant/'
-  $version = '1.5.4'
+  $version = '1.6.2'
 
   $deb  = "vagrant_${version}_x86_64.deb"
 
@@ -18,5 +18,5 @@ class vagrant {
     path    => ['/usr/bin','/bin','/usr/local/sbin', '/usr/sbin', '/sbin'],
     unless  => "which vagrant && /usr/bin/vagrant -v | /bin/grep ${version}"
   }
-  
+
 }
