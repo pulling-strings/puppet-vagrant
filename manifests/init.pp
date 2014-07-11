@@ -1,5 +1,7 @@
 # a module which install vagrant, since it lacks PPA its akward
 class vagrant {
+  include vagrant::pecrant
+
   $url  = 'https://dl.bintray.com/mitchellh/vagrant/'
   $version = '1.6.3'
 
