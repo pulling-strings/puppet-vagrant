@@ -6,6 +6,7 @@ class vagrant::pecrant {
   $url = 'https://raw.githubusercontent.com/gongo/pecrant/master/pecrant'
 
   ensure_resource('file', "${home}/bin", {'ensure' => 'directory'})
+  ensure_resource('class', 'shell::peco', {})
 
   exec{'pecrant download':
     command => "wget -P ${home}/bin ${url}",
