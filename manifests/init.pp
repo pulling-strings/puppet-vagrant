@@ -3,7 +3,7 @@ class vagrant {
   include vagrant::pecrant
 
   $url  = 'https://dl.bintray.com/mitchellh/vagrant/'
-  $version = '1.6.3'
+  $version = '1.6.5'
 
   $deb  = "vagrant_${version}_x86_64.deb"
 
