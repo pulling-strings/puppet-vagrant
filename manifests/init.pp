@@ -4,7 +4,7 @@ class vagrant($user='') {
   include vagrant::nfs
 
   $url  = 'https://dl.bintray.com/mitchellh/vagrant/'
-  $version = '1.7.1'
+  $version = '1.7.2'
 
   $deb  = "vagrant_${version}_x86_64.deb"
 
