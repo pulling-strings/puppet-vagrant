@@ -1,6 +1,5 @@
 # a module which install vagrant, since it lacks PPA its akward
 class vagrant($user='') {
-  include vagrant::pecrant
   include vagrant::nfs
 
   $url  = 'https://dl.bintray.com/mitchellh/vagrant/'
