@@ -1,6 +1,7 @@
 # a module which install vagrant, since it lacks PPA its akward
 class vagrant($user='') {
   include vagrant::nfs
+  include vagrant::plugins
 
   $url  = 'https://dl.bintray.com/mitchellh/vagrant/'
   $version = '1.7.2'
@@ -12,14 +13,14 @@ class vagrant($user='') {
     environment => ['HOME=/home/ronen/'],
     user        => 'root',
     path        => ['/usr/bin','/bin'],
-    unless      => "test -f /usr/bin/vagrant && (/usr/bin/vagrant -v | /bin/grep ${version})"
-  } ~>
+    unless      => "test -f /usr/bin/vagrant && (/usr/bin/vagrant -v | /bin/grep ${version})" } ~>
 
   exec{'install vagrant deb':
-    command      => "dpkg -i /tmp/${deb}",
+    command     => "dpkg -i /tmp/${deb}",
     refreshonly => true,
-    user         => 'root',
-    path         => ['/usr/bin','/bin','/usr/local/sbin', '/usr/sbin', '/sbin'],
+    user        => 'root',
+    path        => ['/usr/bin','/bin','/usr/local/sbin', '/usr/sbin', '/sbin'],
+    notify      => Exec['vagrant plugins']
   }
 
 }
