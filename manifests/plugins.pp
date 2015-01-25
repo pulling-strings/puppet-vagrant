@@ -5,14 +5,15 @@ class vagrant::plugins(
   $user='vagrant'
 ) {
 
-  $joined = join($plugins,' ')
-
-  exec{'vagrant plugins':
-    command     => "vagrant plugin install ${joined}",
-    user        => $user,
-    path        => ['/usr/bin','/bin',],
-    environment => ["HOME=${home}"],
-    refreshonly => true
+  if($plugins!=[]){
+    $joined = join($plugins,' ')
+    exec{'vagrant plugins':
+      command     => "vagrant plugin install ${joined}",
+      user        => $user,
+      path        => ['/usr/bin','/bin',],
+      environment => ["HOME=${home}"],
+      refreshonly => true
+    }
   }
 
 }
