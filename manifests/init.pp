@@ -17,6 +17,7 @@ class vagrant($home) {
   } ~>
 
   package{'vagrant':
+    ensure   => latest,
     source   => "/tmp/${deb}",
     provider => dpkg
   }
