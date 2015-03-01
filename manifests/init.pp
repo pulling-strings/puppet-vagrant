@@ -9,16 +9,16 @@ class vagrant($home) {
   $deb  = "vagrant_${version}_x86_64.deb"
 
   exec{'download vagrant deb':
-    command     => "wget -P /tmp ${url}/${deb}",
+    command     => "wget -P /usr/src/ ${url}/${deb}",
     environment => ["HOME=${home}"],
     user        => 'root',
     path        => ['/usr/bin','/bin'],
-    unless      => "test -f /usr/bin/vagrant && (/usr/bin/vagrant -v | /bin/grep ${version})"
-  } ~>
+    unless      => "test -f /usr/src/${deb}"
+  } ->
 
   package{'vagrant':
     ensure   => latest,
-    source   => "/tmp/${deb}",
+    source   => "/usr/src/${deb}",
     provider => dpkg
   }
 
