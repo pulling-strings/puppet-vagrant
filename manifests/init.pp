@@ -13,6 +13,7 @@ class vagrant($home) {
     environment => ["HOME=${home}"],
     user        => 'root',
     path        => ['/usr/bin','/bin'],
+    timeout     => '1200',
     unless      => "test -f /usr/src/${deb}"
   } ->
 
