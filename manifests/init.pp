@@ -4,7 +4,7 @@ class vagrant($home) {
   include vagrant::plugins
 
   $url  = 'https://dl.bintray.com/mitchellh/vagrant/'
-  $version = '1.7.2'
+  $version = '1.7.4'
 
   $deb  = "vagrant_${version}_x86_64.deb"
 
