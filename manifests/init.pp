@@ -3,8 +3,9 @@ class vagrant($home) {
   include vagrant::nfs
   include vagrant::plugins
 
-  $url  = 'https://dl.bintray.com/mitchellh/vagrant/'
   $version = '1.7.4'
+
+  $url = "https://releases.hashicorp.com/vagrant/${version}"
 
   $deb  = "vagrant_${version}_x86_64.deb"
 
