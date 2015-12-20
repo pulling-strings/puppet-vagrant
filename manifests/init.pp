@@ -1,5 +1,8 @@
 # a module which install vagrant, since it lacks PPA its akward
-class vagrant($home) {
+class vagrant(
+  $home = '',
+  $user = ''
+) {
   include vagrant::nfs
   include vagrant::plugins
 
