@@ -1,10 +1,36 @@
 # Intro 
 
-This module install vagrant deb file
+Management of Vagrant its plugins and boxes on Ubuntu systems.
+
+
+# Usage
+
+
+Installing vagrant:
+```puppet
+  include vagrant
+```
+
+Installing plugins:
+
+```puppet
+  include vagrant::libvirt
+  include vagrant::gce
+```
+
+Installing boxes:
+
+```puppet
+ vagrant::box {'gce':
+   source => 'https://github.com/mitchellh/vagrant-google/raw/master/google.box',
+   user   => $::vagrant::user,
+   home   => $::vagrant::home
+ }
+```
 
 # Copyright and license
 
-Copyright [2013] [Ronen Narkis]
+Copyright [2015] [Ronen Narkis]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 
