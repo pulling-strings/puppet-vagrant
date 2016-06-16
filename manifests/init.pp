@@ -6,7 +6,7 @@ class vagrant(
   include vagrant::nfs
   include vagrant::plugins
 
-  $version = '1.8.1'
+  $version = '1.8.4'
 
   $url = "https://releases.hashicorp.com/vagrant/${version}"
 
