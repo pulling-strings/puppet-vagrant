@@ -1,12 +1,13 @@
 # a module which install vagrant, since it lacks PPA its akward
 class vagrant(
-  $home = '',
-  $user = ''
+  $home = false,
+  $user = false
 ) {
   include vagrant::nfs
   include vagrant::plugins
 
-  $version = '1.9.1'
+  validate_string($home, $user)
+  $version = '1.8.7'
 
   $url = "https://releases.hashicorp.com/vagrant/${version}"
 
