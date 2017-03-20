@@ -7,7 +7,7 @@ class vagrant(
   include vagrant::plugins
 
   validate_string($home, $user)
-  $version = '1.8.7'
+  $version = '1.9.2'
 
   $url = "https://releases.hashicorp.com/vagrant/${version}"
 
