@@ -1,10 +1,11 @@
 # a module which install vagrant, since it lacks PPA its akward
 class vagrant(
   $home = false,
-  $user = false
+  $user = false,
 ) {
   include vagrant::nfs
   include vagrant::plugins
+  include vagrant::environment
 
   validate_string($home, $user)
   $version = '1.9.2'
