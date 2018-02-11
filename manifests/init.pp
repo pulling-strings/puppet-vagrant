@@ -1,14 +1,13 @@
-# a module which install vagrant, since it lacks PPA its akward
+# A module which install and manage vagrant
 class vagrant(
-  $home = false,
-  $user = false,
+  String $home = '',
+  String $user = '',
 ) {
   include vagrant::nfs
   include vagrant::plugins
   include vagrant::environment
   include downloadfile
 
-  validate_string($home, $user)
   $version = '2.0.2'
 
   $url = "https://releases.hashicorp.com/vagrant/${version}"
