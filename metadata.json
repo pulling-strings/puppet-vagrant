@@ -1,0 +1,27 @@
+{
+  "name": "puppet-vagrant",
+  "version": "0.2.0",
+  "author": "Ronen Narkis",
+  "summary": "Setting up Vagrant and its plugins",
+  "license": "Apache-2.0",
+  "source": "https://github.com/pulling-strings/puppet-vagrant",
+  "project_page": "https://github.com/pulling-strings/puppet-vagrant",
+  "issues_url": "https://github.com/pulling-strings/puppet-vagrant",
+  "dependencies": [
+  ],
+  "data_provider": null,
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "9.0"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.0.0"
+    }
+  ]
+}
